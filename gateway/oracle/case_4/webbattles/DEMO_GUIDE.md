@@ -1,7 +1,5 @@
 # WebBattles Cross-Chain Oracle Demo Guide
 
-🎉 **Simplified Auto-Configuration System** - All config variables update automatically!
-
 ## Overview
 
 This demo showcases cross-chain oracle synchronization between two Ethereum chains using the SATP Gateway. When a battle is created on Chain 1, the oracle replicates it to Chain 2 with **automatic configuration management**.
@@ -13,13 +11,13 @@ Chain 1 (Origin) → Oracle → SATP Gateway → Chain 2 (Destination)
 createBattle() → Oracle Processing → syncBattleData() + replicateBattle()
 ```
 
-## Prerequisites ✅
+## Prerequisites
 
 - **Docker and Docker Compose** - For SATP Gateway
 - **Node.js v20.x** - For Hardhat (not v23+)
 - **Python 3.12+** - With requests and web3 modules
 
-## Initial Setup (One-time) 🚀
+## Initial Setup
 
 ### 1. Start the Gateway (Docker)
 In **Terminal 1**, from the `case_4` directory:
@@ -40,9 +38,9 @@ In **Terminal 3**, from the `case_4` directory:
 cd ../../../EVM && npx hardhat node --hostname 0.0.0.0 --port 8546
 ```
 
-✅ **Keep these terminals running** throughout the demo!
+**Keep these terminals running** throughout the demo!
 
-## Quick Demo (3 minutes) 🚀
+## Quick Demo
 
 ### Step 1: Ensure Prerequisites
 ```bash
@@ -54,24 +52,24 @@ docker ps | grep satp
 curl http://localhost:8545 && curl http://localhost:8546
 ```
 
-### Step 2: Deploy Contracts (Auto-Updates Config)
+### Step 2: Deploy Contracts
 ```bash
 cd webbattles
 python3 deploy-contracts.py
 ```
-✅ **Automatically updates** `CONTRACT_CHAIN_1` and `CONTRACT_CHAIN_2` in config.py
+**Automatically updates** `CONTRACT_CHAIN_1` and `CONTRACT_CHAIN_2` in config.py
 
-### Step 3: Register Oracle (Auto-Updates Config)
+### Step 3: Register Oracle
 ```bash
 python3 oracle-webbattles-register.py
 ```
-✅ **Automatically updates** `SYNC_TASK_ID` and `REPLICATION_TASK_ID` in config.py
+**Automatically updates** `SYNC_TASK_ID` and `REPLICATION_TASK_ID` in config.py
 
-### Step 4: Create Battle (Auto-Updates Config)
+### Step 4: Create Battle
 ```bash
 python3 simple-battle-test.py
 ```
-✅ **Automatically updates** `LAST_BATTLE_ID` in config.py
+**Automatically updates** `LAST_BATTLE_ID` in config.py
 
 ### Step 5: Execute Cross-Chain Sync
 ```bash
@@ -83,7 +81,7 @@ python3 oracle-webbattles-execute-update.py both
 python3 verify-cross-chain-battle.py
 ```
 
-## Expected Output 📊
+## Expected Output
 
 ### Battle Creation Success
 ```
@@ -105,11 +103,11 @@ Updating config.py with new battle ID...
 
 ### Cross-Chain Sync Success
 ```
-✅ SYNC OPERATION: SUCCESS
+SYNC OPERATION: SUCCESS
 Transaction Hash: 0x...
 Gas Used: 194,313
 
-✅ REPLICATION OPERATION: SUCCESS  
+REPLICATION OPERATION: SUCCESS  
 Transaction Hash: 0x...
 Gas Used: 181,445
 ```
@@ -130,12 +128,12 @@ CHAIN 2 BATTLE:
   Bet Amount: 0.1 ETH
   Battle Type: Football Freestyle
 
-✅ CROSS-CHAIN SYNC SUCCESSFUL! Battle exists identically on both chains!
+CROSS-CHAIN SYNC SUCCESSFUL! Battle exists identically on both chains!
 ```
 
-## Files Overview 📁
+## Files Overview
 
-### ✅ **Essential Files (KEEP)**
+### **Essential Files (KEEP)**
 - `config.py` - **Auto-updating configuration**
 - `config_updater.py` - **Auto-update utility**
 - `oracle-webbattles-register-fixed.py` - **Working oracle registration**
@@ -145,33 +143,8 @@ CHAIN 2 BATTLE:
 - `oracle-webbattles-check-status.py` - **Status checking**
 - `deploy-contracts.py` - **Python deployment helper**
 
-### ❌ **Removed Files (NO LONGER NEEDED)**
-- ~~`oracle-webbattles-register.py`~~ - **Fixed version created**
-- ~~`docker-compose.yaml`~~ - **Use shared gateway**
-- ~~`start-gateway.sh`~~ - **Use shared gateway**
-- ~~`config.json`~~ - **Use shared gateway**
-- ~~`logs/`~~ - **Use shared gateway logs**
 
-## Key Improvements 🎯
-
-### **1. Auto-Configuration** 
-- ✅ No manual editing of config.py
-- ✅ All scripts update config automatically
-- ✅ Contract addresses auto-updated on deployment
-- ✅ Task IDs auto-updated on registration
-- ✅ Battle IDs auto-updated on creation
-
-### **2. Shared Gateway**
-- ✅ Uses working SATP gateway from case_4
-- ✅ No need to start separate gateway
-- ✅ Reduced complexity and failure points
-
-### **3. Simplified Workflow**
-- ✅ 6 simple steps vs 15+ complex steps
-- ✅ Auto-error detection and fixing
-- ✅ Clear success/failure indicators
-
-## Technical Architecture 🔧
+## Technical Architecture
 
 ### **Smart Contract Functions**
 - `createBattle()` - Creates battles with ETH bets
@@ -191,7 +164,7 @@ update_config_variable('SYNC_TASK_ID', 'uuid...')
 update_config_variable('LAST_BATTLE_ID', '0x...')
 ```
 
-## Troubleshooting 🛠️
+## Troubleshooting
 
 ### **Gateway Issues**
 ```bash
@@ -202,26 +175,18 @@ docker compose restart
 
 ### **Check Connections**
 ```bash
-# Check oracle status (404s are normal)
+# Check oracle status
 python3 oracle-webbattles-check-status.py
 
 # Check if contracts deployed
 python3 -c "from config import *; print(f'Chain1: {CONTRACT_CHAIN_1}'); print(f'Chain2: {CONTRACT_CHAIN_2}')"
 ```
 
-### **Manual Oracle Execution**
-```bash
-# If automatic sync doesn't work
-python3 oracle-webbattles-execute-update.py sync     # Data sync
-python3 oracle-webbattles-execute-update.py replicate # Battle replication  
-python3 oracle-webbattles-execute-update.py both     # Both operations
-```
-
-## Success Criteria ✅
+## Success Criteria
 
 1. **Battle Creation**: New battle on Chain 1 with auto-updated config
 2. **Cross-Chain Sync**: `syncBattleData` success on Chain 2
 3. **Cross-Chain Replication**: `replicateBattle` success on Chain 2
 4. **Verification**: Identical battle data on both chains
 
-🎉 **Demo Complete!** The WebBattles oracle successfully demonstrates cross-chain data synchronization with automatic configuration management. 
+**Demo Complete!** The WebBattles oracle successfully demonstrates cross-chain data synchronization with automatic configuration management. 

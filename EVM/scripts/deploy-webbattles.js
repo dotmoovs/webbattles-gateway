@@ -53,30 +53,8 @@ async function main() {
   await updateConfig(contractAddress, networkName);
   
   // Display contract info
-  console.log("\n" + "=".repeat(60));
-  console.log("WEBBATTLES CONTRACT DEPLOYED");
-  console.log("=".repeat(60));
-  console.log(`Contract Address: ${contractAddress}`);
-  console.log(`Network: ${networkName}`);
-  console.log(`Total Battles: ${await webBattles.totalBattles()}`);
-  
-  // Grant roles info
-  console.log("\nROLES GRANTED TO DEPLOYER:");
-  console.log("   - DEFAULT_ADMIN_ROLE");
-  console.log("   - ORACLE_ROLE");
-  
-  console.log("\nAVAILABLE FUNCTIONS:");
-  console.log("   - createBattle(battleType) payable");
-  console.log("   - replicateBattle(battleId, challenger, betAmount, battleType)");
-  console.log("   - syncBattleData(data)");
-  console.log("   - getBattle(battleId)");
-  console.log("   - getPlayerBattles(player)");
-  
-  console.log("\nNEXT STEPS:");
-  console.log("1. Config.py automatically updated with contract address");
-  console.log("2. Start the SATP gateway: docker compose up");
-  console.log("3. Register with oracle: python3 oracle-webbattles-register.py");
-  console.log("4. Create your first battle!");
+  console.log(`\nContract deployed to ${networkName}`);
+  console.log(`Address: ${contractAddress}`);
   
   return {
     contract: webBattles,

@@ -71,12 +71,7 @@ python3 simple-battle-test.py
 ```
 **Automatically updates** `LAST_BATTLE_ID` in config.py
 
-### Step 5: Execute Cross-Chain Sync
-```bash
-python3 oracle-webbattles-execute-update.py both
-```
-
-### Step 6: Verify Success
+### Step 5: Verify Success
 ```bash
 python3 verify-cross-chain-battle.py
 ```

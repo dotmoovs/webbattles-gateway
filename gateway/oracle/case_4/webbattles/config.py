@@ -26,8 +26,8 @@ DEFAULT_BATTLE_TYPE = "Football Freestyle"
 DEFAULT_CHALLENGER = "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"
 
 # Last registered oracle task IDs (updated by registration script)
-SYNC_TASK_ID = "919da023-75b8-48fd-8058-3ecfc69a3d40"
-REPLICATION_TASK_ID = "fa99a30c-b291-457b-89bc-f5cc048a1cd7"
+SYNC_TASK_ID = "13d10de9-1214-48c8-a85e-2748ca04da66"
+REPLICATION_TASK_ID = "c92c1a82-6b1e-43a2-a5bb-71886478d8b9"
 
 # Last created battle (updated by test scripts)
-LAST_BATTLE_ID = "0x75b6fdaaec55283cdb313e794d294c8492598a27cdeba3036767ea8c7365ccf0" 
+LAST_BATTLE_ID = "0x5d98e8727b4901286c1c14ad5dad2b4c812cd240405954836bb7226e88d9b86a" 

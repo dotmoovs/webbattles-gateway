@@ -96,22 +96,22 @@ if __name__ == "__main__":
     try:
         sync_response = register_webbattles_sync_task()
         sync_id = sync_response.get("taskID")
-        print(f"✅ Sync task registered: {sync_id}")
+        print(f"Sync task registered: {sync_id}")
     except Exception as e:
-        print(f"❌ Sync task failed: {e}")
+        print(f"Sync task failed: {e}")
         sync_id = None
     
     print("\nRegistering battle replication task...")
     try:
         battle_response = register_webbattles_battle_task()
         battle_id = battle_response.get("taskID")
-        print(f"✅ Battle task registered: {battle_id}")
+        print(f"Battle task registered: {battle_id}")
     except Exception as e:
-        print(f"❌ Battle task failed: {e}")
+        print(f"Battle task failed: {e}")
         battle_id = None
     
     if sync_id and battle_id:
-        print(f"\n🎉 All tasks registered successfully!")
+        print(f"\nAll tasks registered successfully!")
         print(f"Sync Task ID: {sync_id}")
         print(f"Battle Task ID: {battle_id}")
         
@@ -121,6 +121,6 @@ if __name__ == "__main__":
             'SYNC_TASK_ID': sync_id,
             'REPLICATION_TASK_ID': battle_id
         })
-        print("✅ Config updated successfully!")
+        print("Config updated successfully!")
     else:
-        print("\n❌ Registration failed - not all tasks were registered") 
+        print("\nRegistration failed - not all tasks were registered") 

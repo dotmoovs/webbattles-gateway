@@ -29,7 +29,7 @@ def update_config_variable(variable_name, new_value):
     with open(config_path, 'w') as file:
         file.write(updated_content)
     
-    print(f"✅ Updated {variable_name} = {new_value}")
+    print(f"Updated {variable_name} = {new_value}")
 
 def update_multiple_config_variables(updates):
     """

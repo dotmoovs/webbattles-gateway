@@ -136,7 +136,7 @@ CROSS-CHAIN SYNC SUCCESSFUL! Battle exists identically on both chains!
 ### **Essential Files (KEEP)**
 - `config.py` - **Auto-updating configuration**
 - `config_updater.py` - **Auto-update utility**
-- `oracle-webbattles-register-fixed.py` - **Working oracle registration**
+- `oracle-webbattles-register.py` - **Working oracle registration**
 - `simple-battle-test.py` - **Battle creation + auto-config**
 - `oracle-webbattles-execute-update.py` - **Manual oracle execution**
 - `verify-cross-chain-battle.py` - **Cross-chain verification**

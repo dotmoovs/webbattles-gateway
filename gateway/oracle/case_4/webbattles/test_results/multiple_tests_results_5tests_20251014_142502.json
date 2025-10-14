@@ -1,0 +1,205 @@
+{
+  "test_metadata": {
+    "test_date": "2025-10-14T14:23:57.180117",
+    "num_tests": 5,
+    "test_type": "statistical_sampling",
+    "trl_level": 8
+  },
+  "individual_tests": [
+    {
+      "test_number": 1,
+      "timestamp": "2025-10-14T14:23:57.195730",
+      "status": "inconsistent",
+      "metrics": {
+        "creation_time_seconds": 3.6906049251556396,
+        "creation_gas_used": 385534,
+        "creation_gas_price_gwei": 0.001000041,
+        "creation_cost_eth": 3.85549806894e-07,
+        "fetch_time_seconds": 0.4494609832763672,
+        "replication_time_seconds": 1.2980070114135742,
+        "replication_gas_used": 181433,
+        "replication_gas_price_gwei": 0.001005104,
+        "replication_cost_eth": 1.82359034032e-07,
+        "total_sync_time_seconds": 1.7474679946899414,
+        "end_to_end_time_seconds": 5.438072919845581,
+        "data_consistency": false,
+        "total_gas_used": 566967,
+        "total_cost_eth": 5.67908840926e-07
+      },
+      "battle_id": "2a92feb060e1ad0c4e287117acdc8ae995fe1e56d7a3f6955dbba7da527fb18f",
+      "creation_tx": "d1d700f2d82144e7777b0877dd949fbfd696ef7376017cac124a76eff1166d11",
+      "replication_tx": "6f4e0dc7ef00a2015f726b0b2ec950498ceeb34125d036e1121b57ef215a513b"
+    },
+    {
+      "test_number": 2,
+      "timestamp": "2025-10-14T14:24:06.234367",
+      "status": "success",
+      "metrics": {
+        "creation_time_seconds": 18.361001014709473,
+        "creation_gas_used": 385534,
+        "creation_gas_price_gwei": 0.001000041,
+        "creation_cost_eth": 3.85549806894e-07,
+        "fetch_time_seconds": 0.22250914573669434,
+        "replication_time_seconds": 0.8930420875549316,
+        "replication_gas_used": 181433,
+        "replication_gas_price_gwei": 0.001005271,
+        "replication_cost_eth": 1.82389333343e-07,
+        "total_sync_time_seconds": 1.115551233291626,
+        "end_to_end_time_seconds": 19.4765522480011,
+        "data_consistency": true,
+        "total_gas_used": 566967,
+        "total_cost_eth": 5.67939140237e-07
+      },
+      "battle_id": "ddded51512069dd2c055d522ea7d3cc3de756601c08a11a159475d6238521a07",
+      "creation_tx": "3803f6009adc6fe808df1749d38655ccc9399fb21aa4e328e6acd816d2c61494",
+      "replication_tx": "bd3c4a6316fb018c874dde2e39b3d8551154b0cb6f688c2b48d334a4ab9d276f"
+    },
+    {
+      "test_number": 3,
+      "timestamp": "2025-10-14T14:24:29.158459",
+      "status": "inconsistent",
+      "metrics": {
+        "creation_time_seconds": 9.996279001235962,
+        "creation_gas_used": 385534,
+        "creation_gas_price_gwei": 0.001000042,
+        "creation_cost_eth": 3.85550192428e-07,
+        "fetch_time_seconds": 0.23451972007751465,
+        "replication_time_seconds": 0.7062921524047852,
+        "replication_gas_used": 181433,
+        "replication_gas_price_gwei": 0.001005157,
+        "replication_cost_eth": 1.82368649981e-07,
+        "total_sync_time_seconds": 0.9408118724822998,
+        "end_to_end_time_seconds": 10.937090873718262,
+        "data_consistency": false,
+        "total_gas_used": 566967,
+        "total_cost_eth": 5.67918842409e-07
+      },
+      "battle_id": "bd6ed228a3eb0ef0342b26a32526c5c5c61bd044e2a1092c7c48506af52a6859",
+      "creation_tx": "4be65c94f29bb9d50c5216fdcf1390bd82e29c1b338316e827f8234801c11e51",
+      "replication_tx": "e45e4af630a7eafc67482e8883c67b6d8411bcefee2c6993b40fe63d9bd8c1da"
+    },
+    {
+      "test_number": 4,
+      "timestamp": "2025-10-14T14:24:43.485689",
+      "status": "success",
+      "metrics": {
+        "creation_time_seconds": 5.3408362865448,
+        "creation_gas_used": 385534,
+        "creation_gas_price_gwei": 0.001000042,
+        "creation_cost_eth": 3.85550192428e-07,
+        "fetch_time_seconds": 0.2265641689300537,
+        "replication_time_seconds": 0.6634931564331055,
+        "replication_gas_used": 181421,
+        "replication_gas_price_gwei": 0.001005172,
+        "replication_cost_eth": 1.82359309412e-07,
+        "total_sync_time_seconds": 0.8900573253631592,
+        "end_to_end_time_seconds": 6.230893611907959,
+        "data_consistency": true,
+        "total_gas_used": 566955,
+        "total_cost_eth": 5.6790950184e-07
+      },
+      "battle_id": "828c53159e17003a64c51173b59f320dd0c27e29e8f3efddddf749d142f892cc",
+      "creation_tx": "098f86ae7d33b05d7a24ed74b94f198cb1ccfe9a26d5991c9926f933027bfbf8",
+      "replication_tx": "bb9eb511a2c8991ce96c70f0f2ae1c62c5331bf4e99d866939ab518d57344be6"
+    },
+    {
+      "test_number": 5,
+      "timestamp": "2025-10-14T14:24:53.166909",
+      "status": "success",
+      "metrics": {
+        "creation_time_seconds": 7.178107023239136,
+        "creation_gas_used": 385534,
+        "creation_gas_price_gwei": 0.001000039,
+        "creation_cost_eth": 3.85549035826e-07,
+        "fetch_time_seconds": 0.2334747314453125,
+        "replication_time_seconds": 0.9767770767211914,
+        "replication_gas_used": 181433,
+        "replication_gas_price_gwei": 0.001005212,
+        "replication_cost_eth": 1.82378628796e-07,
+        "total_sync_time_seconds": 1.210251808166504,
+        "end_to_end_time_seconds": 8.38835883140564,
+        "data_consistency": true,
+        "total_gas_used": 566967,
+        "total_cost_eth": 5.67927664622e-07
+      },
+      "battle_id": "da2d4612f355fe0a58a98c6f7acdc75acfecc61229ad1e48c4398f3d7c545d42",
+      "creation_tx": "0e6d646fd127eb41580876f983e6a773aa07720b3ef779d7d94b47ab7a0d93bf",
+      "replication_tx": "9b9edf076a46ecb9974569d1ddb14c7cd129a1aab8b1d6802432e5274bce6c1d"
+    }
+  ],
+  "statistical_analysis": {
+    "creation_time_seconds": {
+      "mean": 10.293314774831137,
+      "median": 7.178107023239136,
+      "std_dev": 7.046954085902648,
+      "min": 5.3408362865448,
+      "max": 18.361001014709473,
+      "sample_size": 3
+    },
+    "creation_gas_used": {
+      "mean": 385534,
+      "median": 385534,
+      "std_dev": 0.0,
+      "min": 385534,
+      "max": 385534,
+      "sample_size": 3
+    },
+    "replication_time_seconds": {
+      "mean": 0.8444374402364095,
+      "median": 0.8930420875549316,
+      "std_dev": 0.16219899038984917,
+      "min": 0.6634931564331055,
+      "max": 0.9767770767211914,
+      "sample_size": 3
+    },
+    "replication_gas_used": {
+      "mean": 181429,
+      "median": 181433,
+      "std_dev": 6.928203230275509,
+      "min": 181421,
+      "max": 181433,
+      "sample_size": 3
+    },
+    "total_sync_time_seconds": {
+      "mean": 1.0719534556070964,
+      "median": 1.115551233291626,
+      "std_dev": 0.16448921353297793,
+      "min": 0.8900573253631592,
+      "max": 1.210251808166504,
+      "sample_size": 3
+    },
+    "end_to_end_time_seconds": {
+      "mean": 11.365268230438232,
+      "median": 8.38835883140564,
+      "std_dev": 7.106923409852792,
+      "min": 6.230893611907959,
+      "max": 19.4765522480011,
+      "sample_size": 3
+    },
+    "total_gas_used": {
+      "mean": 566963,
+      "median": 566967,
+      "std_dev": 6.928203230275509,
+      "min": 566955,
+      "max": 566967,
+      "sample_size": 3
+    },
+    "total_cost_eth": {
+      "mean": 5.679254355663334e-07,
+      "median": 5.67927664622e-07,
+      "std_dev": 1.494440233187221e-11,
+      "min": 5.6790950184e-07,
+      "max": 5.67939140237e-07,
+      "sample_size": 3
+    }
+  },
+  "aggregated_metrics": {
+    "total_tests_run": 5,
+    "successful_tests": 3,
+    "failed_tests": 2,
+    "success_rate_percentage": 60.0,
+    "data_consistency_rate_percentage": 100.0,
+    "avg_sync_time_seconds": 1.0719534556070964,
+    "avg_cost_usd": 0.0014766061324724667
+  }
+}

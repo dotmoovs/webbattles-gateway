@@ -1,7 +1,7 @@
 {
   "gid": {
-    "id": "testnetGatewayID",
-    "name": "TestnetGateway",
+    "id": "mockID",
+    "name": "CustomGateway",
     "version": [
       {
         "Core": "v02",
@@ -9,7 +9,7 @@
         "Crash": "v02"
       }
     ],
-    "proofID": "testnetProofID",
+    "proofID": "mockProofID10",
     "address": "http://gateway.satp-hermes",
     "gatewayClientPort": 3011,
     "gatewayServerPort": 3010,
@@ -22,12 +22,12 @@
     "oracleConfig": [
       {
         "networkIdentification": {
-          "id": "Sepolia",
+          "id": "HardhatTestNetwork1",
           "ledgerType": "ETHEREUM"
         },
         "signingCredential": {
-          "ethAccount": "0x3Be45D4851C74b0CA97089d73e7b95D9385505b0",
-          "secret": "0xd12a0e910f0148c21007811cb38340bbd0ae234abd557a57af0acad428843b24",
+          "ethAccount": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+          "secret": "0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80",
           "type": "PRIVATE_KEY_HEX"
         },
         "gasConfig": {
@@ -35,7 +35,7 @@
           "gasPrice": "20000000000"
         },
         "connectorOptions": {
-          "rpcApiHttpHost": "https://ethereum-sepolia-rpc.publicnode.com"
+          "rpcApiWsHost": "ws://host.docker.internal:8545"
         },
         "claimFormats": [
           2
@@ -43,12 +43,12 @@
       },
       {
         "networkIdentification": {
-          "id": "BaseSepolia",
+          "id": "HardhatTestNetwork2",
           "ledgerType": "ETHEREUM"
         },
         "signingCredential": {
-          "ethAccount": "0x3Be45D4851C74b0CA97089d73e7b95D9385505b0",
-          "secret": "0xd12a0e910f0148c21007811cb38340bbd0ae234abd557a57af0acad428843b24",
+          "ethAccount": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+          "secret": "0x47e179ec197488593b187f80a00eb0da91f1b9d0b13f8733639f19c30a34926a",
           "type": "PRIVATE_KEY_HEX"
         },
         "gasConfig": {
@@ -56,7 +56,7 @@
           "gasPrice": "20000000000"
         },
         "connectorOptions": {
-          "rpcApiHttpHost": "https://sepolia.base.org"
+          "rpcApiHttpHost": "http://host.docker.internal:8546"
         },
         "claimFormats": [
           2

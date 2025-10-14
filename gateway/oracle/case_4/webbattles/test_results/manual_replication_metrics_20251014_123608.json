@@ -1,0 +1,49 @@
+{
+  "test_date": "2025-10-14T12:36:03.365078",
+  "chains": {
+    "source": "Sepolia",
+    "destination": "Base Sepolia"
+  },
+  "contracts": {
+    "source_address": "0x17c3468D98b00bf24B6Bc1c67508d5D568E20cC6",
+    "destination_address": "0xF3a5cd8F0cA7D6BdfD8b36B04A951626Aa7DEDf1"
+  },
+  "transactions": [
+    {
+      "type": "source_battle",
+      "chain": "Sepolia",
+      "battle_id": "3085e57ff76af657a7852bdc62c7fe83a3f73d6b3c56cf88af14f069f9eb4074",
+      "explorer_url": "https://sepolia.etherscan.io/address/0x17c3468D98b00bf24B6Bc1c67508d5D568E20cC6"
+    },
+    {
+      "type": "cross_chain_replication",
+      "chain": "Base Sepolia",
+      "tx_hash": "1e3e0c2360825d0cae11cb212126abe8999ea9d557d2cc848dc7c9fae3b17c4a",
+      "block_number": 32336739,
+      "explorer_url": "https://sepolia.basescan.org/tx/1e3e0c2360825d0cae11cb212126abe8999ea9d557d2cc848dc7c9fae3b17c4a"
+    }
+  ],
+  "timings": {
+    "cross_chain_sync": {
+      "total_seconds": 2.5596790313720703,
+      "confirmation_seconds": 0.956287145614624
+    }
+  },
+  "gas_usage": {
+    "replication": {
+      "gas_used": 215633,
+      "gas_price_gwei": 0.001000138,
+      "total_cost_eth": 2.15662757354e-07
+    }
+  },
+  "status": "success",
+  "verification": {
+    "success": true,
+    "battle_data": {
+      "battle_id": "3085e57ff76af657a7852bdc62c7fe83a3f73d6b3c56cf88af14f069f9eb4074",
+      "challenger": "0x3Be45D4851C74b0CA97089d73e7b95D9385505b0",
+      "bet_amount_eth": 0.01,
+      "battle_type": "Football Freestyle"
+    }
+  }
+}

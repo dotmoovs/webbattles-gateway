@@ -1,0 +1,35 @@
+{
+  "test_date": "2025-10-14T12:33:27.309469",
+  "chains": {
+    "source": "Sepolia",
+    "destination": "Base Sepolia"
+  },
+  "contracts": {
+    "source_address": "0x17c3468D98b00bf24B6Bc1c67508d5D568E20cC6",
+    "destination_address": "0xF3a5cd8F0cA7D6BdfD8b36B04A951626Aa7DEDf1"
+  },
+  "transactions": [
+    {
+      "type": "battle_creation",
+      "chain": "Sepolia",
+      "tx_hash": "2b1f60093649969dd6f32d84ead653ad0dbe4bc699c63f53ac3488c6dbec3d5c",
+      "block_number": 9409699,
+      "battle_id": "3085e57ff76af657a7852bdc62c7fe83a3f73d6b3c56cf88af14f069f9eb4074",
+      "explorer_url": "https://sepolia.etherscan.io/tx/2b1f60093649969dd6f32d84ead653ad0dbe4bc699c63f53ac3488c6dbec3d5c"
+    }
+  ],
+  "timings": {
+    "battle_creation": {
+      "total_seconds": 9.029376029968262,
+      "transaction_to_confirmation_seconds": 8.214022159576416
+    }
+  },
+  "gas_usage": {
+    "battle_creation": {
+      "gas_used": 436834,
+      "gas_price_gwei": 0.001000018,
+      "total_cost_eth": 4.36841863012e-07
+    }
+  },
+  "status": "failed_oracle_registration"
+}

@@ -42744,3 +42744,90 @@
   links: []
 }
 [2025-10-15T10:05:22.645Z] DEBUG (getHealthCheckService()): { status: 'AVAILABLE' }
+[2025-10-15T10:05:28.108Z] DEBUG (HealthCheckEndpointV1): get - /api/v1/@hyperledger/cactus-plugin-satp-hermes/healthcheck
+{
+  resource: {
+    attributes: {
+      'service.name': 'unknown_service:/usr/local/bin/node',
+      'telemetry.sdk.language': 'nodejs',
+      'telemetry.sdk.name': 'opentelemetry',
+      'telemetry.sdk.version': '1.30.1'
+    }
+  },
+  instrumentationScope: {
+    name: 'SATPManager#healthCheck',
+    version: undefined,
+    schemaUrl: undefined
+  },
+  traceId: '96a108641872d60869c1a5ce20cf9ea2',
+  parentId: undefined,
+  traceState: undefined,
+  name: 'generateSpanID',
+  id: '2e2a6c9e8a870cdf',
+  kind: 0,
+  timestamp: 1760522728108000,
+  duration: 0,
+  attributes: {},
+  status: { code: 0 },
+  events: [],
+  links: []
+}
+[2025-10-15T10:05:28.108Z] DEBUG (getHealthCheckService()): { status: 'AVAILABLE' }
+[2025-10-15T10:05:33.561Z] DEBUG (HealthCheckEndpointV1): get - /api/v1/@hyperledger/cactus-plugin-satp-hermes/healthcheck
+{
+  resource: {
+    attributes: {
+      'service.name': 'unknown_service:/usr/local/bin/node',
+      'telemetry.sdk.language': 'nodejs',
+      'telemetry.sdk.name': 'opentelemetry',
+      'telemetry.sdk.version': '1.30.1'
+    }
+  },
+  instrumentationScope: {
+    name: 'SATPManager#healthCheck',
+    version: undefined,
+    schemaUrl: undefined
+  },
+  traceId: 'aa6a0901f21ba7d2e2b2c17570f470c0',
+  parentId: undefined,
+  traceState: undefined,
+  name: 'generateSpanID',
+  id: '9b9bfda5b15c1414',
+  kind: 0,
+  timestamp: 1760522733561000,
+  duration: 0,
+  attributes: {},
+  status: { code: 0 },
+  events: [],
+  links: []
+}
+[2025-10-15T10:05:33.561Z] DEBUG (getHealthCheckService()): { status: 'AVAILABLE' }
+[2025-10-15T10:05:39.043Z] DEBUG (HealthCheckEndpointV1): get - /api/v1/@hyperledger/cactus-plugin-satp-hermes/healthcheck
+{
+  resource: {
+    attributes: {
+      'service.name': 'unknown_service:/usr/local/bin/node',
+      'telemetry.sdk.language': 'nodejs',
+      'telemetry.sdk.name': 'opentelemetry',
+      'telemetry.sdk.version': '1.30.1'
+    }
+  },
+  instrumentationScope: {
+    name: 'SATPManager#healthCheck',
+    version: undefined,
+    schemaUrl: undefined
+  },
+  traceId: '70dc10bfd998618caa597006aa21d3b3',
+  parentId: undefined,
+  traceState: undefined,
+  name: 'generateSpanID',
+  id: '401109a46f0beebf',
+  kind: 0,
+  timestamp: 1760522739043000,
+  duration: 0,
+  attributes: {},
+  status: { code: 0 },
+  events: [],
+  links: []
+}
+[2025-10-15T10:05:39.043Z] DEBUG (getHealthCheckService()): { status: 'AVAILABLE' }

@@ -3,7 +3,7 @@ require('dotenv').config();
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
-  solidity: "0.8.28",
+  solidity: "0.8.20",
   networks: {
     hardhat1: {
       url: "http://0.0.0.0:8545",

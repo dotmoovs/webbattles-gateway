@@ -27,7 +27,7 @@
         },
         "signingCredential": {
           "ethAccount": "0x3Be45D4851C74b0CA97089d73e7b95D9385505b0",
-          "secret": "YOUR_PRIVATE_KEY_HERE",
+          "secret": "ENV:LOAD_FROM_ENV_FILE",
           "type": "PRIVATE_KEY_HEX"
         },
         "gasConfig": {
@@ -48,7 +48,7 @@
         },
         "signingCredential": {
           "ethAccount": "0x3Be45D4851C74b0CA97089d73e7b95D9385505b0",
-          "secret": "YOUR_PRIVATE_KEY_HERE",
+          "secret": "ENV:LOAD_FROM_ENV_FILE",
           "type": "PRIVATE_KEY_HEX"
         },
         "gasConfig": {

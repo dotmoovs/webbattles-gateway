@@ -86,7 +86,7 @@ class MultiTestRunner:
             print(f"Creating battle on {CHAIN_1_NAME}...")
             creation_start = time.time()
             
-            bet_amount = self.w3_source.to_wei(0.01, 'ether')
+            bet_amount = self.w3_source.to_wei(0.0001, 'ether')  # Reduced from 0.01 to 0.0001 ETH
             battle_type = "Football Freestyle"
             
             nonce_source = self.w3_source.eth.get_transaction_count(self.account_source.address)
@@ -129,44 +129,57 @@ class MultiTestRunner:
             
             print(f"  ✅ Battle created: {battle_id.hex()[:16]}...")
             print(f"  Time: {creation_time:.2f}s, Gas: {receipt_creation.gasUsed:,}")
+            print(f"  Sepolia TX: https://sepolia.etherscan.io/tx/{tx_hash_creation.hex()}")
             
             # Step 2: Replicate Battle
             print(f"Replicating to {CHAIN_2_NAME}...")
             
-            # Fetch battle data
-            fetch_start = time.time()
-            battle = self.contract_source.functions.getBattle(battle_id).call()
-            fetch_time = time.time() - fetch_start
-            
-            # Replicate
-            replication_start = time.time()
-            
-            nonce_dest = self.w3_dest.eth.get_transaction_count(self.account_dest.address)
-            gas_price_dest = self.w3_dest.eth.gas_price
-            
-            tx_repl = self.contract_dest.functions.replicateBattle(
-                battle[0], battle[1], battle[3], battle[8]
-            ).build_transaction({
-                'from': self.account_dest.address,
-                'gas': 500000,
-                'gasPrice': gas_price_dest,
-                'nonce': nonce_dest,
-            })
-            
-            signed_tx_repl = self.w3_dest.eth.account.sign_transaction(tx_repl, self.private_key_dest)
-            tx_hash_replication = self.w3_dest.eth.send_raw_transaction(signed_tx_repl.raw_transaction)
-            
-            receipt_replication = self.w3_dest.eth.wait_for_transaction_receipt(tx_hash_replication, timeout=120)
-            replication_time = time.time() - replication_start
-            
-            if receipt_replication.status != 1:
+            try:
+                # Fetch battle data
+                fetch_start = time.time()
+                battle = self.contract_source.functions.getBattle(battle_id).call()
+                fetch_time = time.time() - fetch_start
+                
+                # Replicate
+                replication_start = time.time()
+                
+                nonce_dest = self.w3_dest.eth.get_transaction_count(self.account_dest.address)
+                gas_price_dest = self.w3_dest.eth.gas_price
+                
+                tx_repl = self.contract_dest.functions.replicateBattle(
+                    battle[0], battle[1], battle[3], battle[8]
+                ).build_transaction({
+                    'from': self.account_dest.address,
+                    'gas': 500000,
+                    'gasPrice': gas_price_dest,
+                    'nonce': nonce_dest,
+                })
+                
+                signed_tx_repl = self.w3_dest.eth.account.sign_transaction(tx_repl, self.private_key_dest)
+                tx_hash_replication = self.w3_dest.eth.send_raw_transaction(signed_tx_repl.raw_transaction)
+                
+                receipt_replication = self.w3_dest.eth.wait_for_transaction_receipt(tx_hash_replication, timeout=120)
+                replication_time = time.time() - replication_start
+                
+                if receipt_replication.status != 1:
+                    print(f"  ❌ Replication transaction failed (status=0)")
+                    print(f"  Base TX: https://sepolia.basescan.org/tx/{tx_hash_replication.hex()}")
+                    test_result["status"] = "failed_replication"
+                    test_result["error"] = "Transaction reverted"
+                    test_result["replication_tx"] = tx_hash_replication.hex()
+                    return test_result
+                    
+            except Exception as repl_error:
+                print(f"  ❌ Replication error: {repl_error}")
                 test_result["status"] = "failed_replication"
+                test_result["error"] = str(repl_error)
                 return test_result
             
             test_result["replication_tx"] = tx_hash_replication.hex()
             
             print(f"  ✅ Replicated")
             print(f"  Sync time: {replication_time:.2f}s, Gas: {receipt_replication.gasUsed:,}")
+            print(f"  Base TX: https://sepolia.basescan.org/tx/{tx_hash_replication.hex()}")
             
             # Step 3: Verify Consistency
             time.sleep(3)  # Let chain settle (increased for public testnets)
@@ -324,12 +337,13 @@ def main():
     
     parser = argparse.ArgumentParser(description='Run multiple tests for statistical analysis')
     parser.add_argument('--num-tests', type=int, default=10, help='Number of tests to run (default: 10)')
+    parser.add_argument('--yes', '-y', action='store_true', help='Skip confirmation prompt')
     args = parser.parse_args()
     
     runner = MultiTestRunner(num_tests=args.num_tests)
     
     # Confirm before running many tests
-    if args.num_tests > 20:
+    if args.num_tests > 20 and not args.yes:
         print(f"\n⚠️  Warning: You're about to run {args.num_tests} tests.")
         print(f"This will:")
         print(f"  - Take approximately {args.num_tests * 0.15:.0f} minutes")
@@ -346,10 +360,29 @@ def main():
     print(f"\n{'='*70}")
     print(f"  STATISTICAL TESTING COMPLETE")
     print(f"{'='*70}")
-    print(f"\n✅ {runner.results['aggregated_metrics']['successful_tests']} tests successful")
+    
+    # Get successful tests count safely
+    successful_tests = runner.results.get('aggregated_metrics', {}).get('successful_tests', 0)
+    total_tests = runner.results.get('test_metadata', {}).get('num_tests', 0)
+    
+    print(f"\n✅ {successful_tests}/{total_tests} tests successful")
     print(f"✅ Results saved: {os.path.basename(filepath)}")
     print(f"\nUse this data for comprehensive reporting and statistical validation.")
     print(f"{'='*70}")
+    
+    # Automatically generate test results table
+    print(f"\n🎯 GENERATING TEST RESULTS TABLE...")
+    print(f"{'='*70}")
+    try:
+        import subprocess
+        result = subprocess.run(['python3', 'test-results-analyzer.py'], 
+                              capture_output=True, text=True, cwd=os.path.dirname(__file__))
+        if result.returncode == 0:
+            print(result.stdout)
+        else:
+            print(f"⚠️ Could not generate table: {result.stderr}")
+    except Exception as e:
+        print(f"⚠️ Could not generate table: {e}")
     
     return 0
 

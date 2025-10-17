@@ -1,0 +1,109 @@
+{
+  "test_metadata": {
+    "test_date": "2025-10-17T16:09:04.841688",
+    "num_tests": 1,
+    "test_type": "statistical_sampling",
+    "trl_level": 8
+  },
+  "individual_tests": [
+    {
+      "test_number": 1,
+      "timestamp": "2025-10-17T16:09:04.860610",
+      "status": "success",
+      "metrics": {
+        "creation_time_seconds": 7.780101776123047,
+        "creation_gas_used": 362779,
+        "creation_gas_price_gwei": 0.001000013,
+        "creation_cost_eth": 3.62783716127e-07,
+        "fetch_time_seconds": 0.23591995239257812,
+        "replication_time_seconds": 1.2933740615844727,
+        "replication_gas_used": 181433,
+        "replication_gas_price_gwei": 0.001000104,
+        "replication_cost_eth": 1.81451869032e-07,
+        "total_sync_time_seconds": 1.5292940139770508,
+        "end_to_end_time_seconds": 9.309395790100098,
+        "data_consistency": true,
+        "total_gas_used": 544212,
+        "total_cost_eth": 5.44235585159e-07
+      },
+      "battle_id": "78926837e62adc8fe93560f4d1c0d94e56abeead9dfc57cf2f0ada82f48edc41",
+      "creation_tx": "198e7ec759b637b3c9ee7539e22d20613a995721742ebc3b7bc69da34667f2a4",
+      "replication_tx": "86a6fcb37b21f61c6105f43fbe5ec6aa47c6742a8f6b5a22092943d1eeef6100"
+    }
+  ],
+  "statistical_analysis": {
+    "creation_time_seconds": {
+      "mean": 7.780101776123047,
+      "median": 7.780101776123047,
+      "std_dev": 0,
+      "min": 7.780101776123047,
+      "max": 7.780101776123047,
+      "sample_size": 1
+    },
+    "creation_gas_used": {
+      "mean": 362779,
+      "median": 362779,
+      "std_dev": 0,
+      "min": 362779,
+      "max": 362779,
+      "sample_size": 1
+    },
+    "replication_time_seconds": {
+      "mean": 1.2933740615844727,
+      "median": 1.2933740615844727,
+      "std_dev": 0,
+      "min": 1.2933740615844727,
+      "max": 1.2933740615844727,
+      "sample_size": 1
+    },
+    "replication_gas_used": {
+      "mean": 181433,
+      "median": 181433,
+      "std_dev": 0,
+      "min": 181433,
+      "max": 181433,
+      "sample_size": 1
+    },
+    "total_sync_time_seconds": {
+      "mean": 1.5292940139770508,
+      "median": 1.5292940139770508,
+      "std_dev": 0,
+      "min": 1.5292940139770508,
+      "max": 1.5292940139770508,
+      "sample_size": 1
+    },
+    "end_to_end_time_seconds": {
+      "mean": 9.309395790100098,
+      "median": 9.309395790100098,
+      "std_dev": 0,
+      "min": 9.309395790100098,
+      "max": 9.309395790100098,
+      "sample_size": 1
+    },
+    "total_gas_used": {
+      "mean": 544212,
+      "median": 544212,
+      "std_dev": 0,
+      "min": 544212,
+      "max": 544212,
+      "sample_size": 1
+    },
+    "total_cost_eth": {
+      "mean": 5.44235585159e-07,
+      "median": 5.44235585159e-07,
+      "std_dev": 0,
+      "min": 5.44235585159e-07,
+      "max": 5.44235585159e-07,
+      "sample_size": 1
+    }
+  },
+  "aggregated_metrics": {
+    "total_tests_run": 1,
+    "successful_tests": 1,
+    "failed_tests": 0,
+    "success_rate_percentage": 100.0,
+    "data_consistency_rate_percentage": 100.0,
+    "avg_sync_time_seconds": 1.5292940139770508,
+    "avg_cost_usd": 0.0014150125214133999
+  }
+}

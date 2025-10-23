@@ -26,8 +26,8 @@
           "ledgerType": "ETHEREUM"
         },
         "signingCredential": {
-          "ethAccount": "0x3Be45D4851C74b0CA97089d73e7b95D9385505b0",
-          "secret": "0xd12a0e910f0148c21007811cb38340bbd0ae234abd557a57af0acad428843b24",
+          "ethAccount": "YOUR_ETH_ACCOUNT_ADDRESS",
+          "secret": "USE_ENVIRONMENT_VARIABLE_INSTEAD",
           "type": "PRIVATE_KEY_HEX"
         },
         "gasConfig": {
@@ -47,8 +47,8 @@
           "ledgerType": "ETHEREUM"
         },
         "signingCredential": {
-          "ethAccount": "0x3Be45D4851C74b0CA97089d73e7b95D9385505b0",
-          "secret": "0xd12a0e910f0148c21007811cb38340bbd0ae234abd557a57af0acad428843b24",
+          "ethAccount": "YOUR_ETH_ACCOUNT_ADDRESS",
+          "secret": "USE_ENVIRONMENT_VARIABLE_INSTEAD",
           "type": "PRIVATE_KEY_HEX"
         },
         "gasConfig": {
@@ -65,3 +65,4 @@
     ]
   }
 }
+

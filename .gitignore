@@ -1,0 +1,35 @@
+# Logs
+*.log
+*.log.*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Config files with secrets (use templates instead)
+**/config/config-local.json
+**/config/config.json
+!**/config/config-template.json
+
+# Python
+__pycache__/
+*.py[cod]
+*~
+.Python
+venv/
+env/
+
+# Node
+node_modules/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+

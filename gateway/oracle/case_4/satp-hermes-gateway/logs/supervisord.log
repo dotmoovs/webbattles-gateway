@@ -92,3 +92,7 @@
 2025-07-07 17:16:49,802 WARN exited: satp-gateway (exit status 1; not expected)
 2025-07-07 17:16:50,850 INFO spawned: 'satp-gateway' with pid 1951
 2025-07-07 17:16:51,854 INFO success: satp-gateway entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-10-14 11:24:58,178 INFO Set uid to user 0 succeeded
+2025-10-14 11:24:58,234 INFO supervisord started with pid 1
+2025-10-14 11:24:59,244 INFO spawned: 'satp-gateway' with pid 7
+2025-10-14 11:25:00,248 INFO success: satp-gateway entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)

@@ -1,8 +1,8 @@
 # WebBattles Cross-Chain Oracle Configuration
 
 # Contract addresses (updated automatically by deployment scripts)
-CONTRACT_CHAIN_1 = "0x5FbDB2315678afecb367f032d93F642f64180aa3"
-CONTRACT_CHAIN_2 = "0xbdEd0D2bf404bdcBa897a74E6657f1f12e5C6fb6"
+CONTRACT_CHAIN_1 = "0x17c3468D98b00bf24B6Bc1c67508d5D568E20cC6"
+CONTRACT_CHAIN_2 = "0xF3a5cd8F0cA7D6BdfD8b36B04A951626Aa7DEDf1"
 
 # Network configuration
 CHAIN_1_RPC = "http://localhost:8545"
@@ -30,4 +30,4 @@ SYNC_TASK_ID = "13d10de9-1214-48c8-a85e-2748ca04da66"
 REPLICATION_TASK_ID = "c92c1a82-6b1e-43a2-a5bb-71886478d8b9"
 
 # Last created battle (updated by test scripts)
-LAST_BATTLE_ID = "0x5d98e8727b4901286c1c14ad5dad2b4c812cd240405954836bb7226e88d9b86a" 
+LAST_BATTLE_ID = "0x3085e57ff76af657a7852bdc62c7fe83a3f73d6b3c56cf88af14f069f9eb4074" 

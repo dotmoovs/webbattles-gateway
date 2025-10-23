@@ -49,7 +49,7 @@ def analyze_latest_tests():
         test_num = test.get('test_number', 'N/A')
         battle_id = test.get('battle_id', 'N/A')
         sepolia_tx = test.get('creation_tx', 'N/A')
-        base_tx = 'N/A'  # Will be filled when replication works
+        base_tx = test.get('replication_tx', 'N/A')
         status = test.get('status', 'N/A')
         timestamp = test.get('timestamp', 'N/A')
         
@@ -63,23 +63,34 @@ def analyze_latest_tests():
         # Get metrics if available
         metrics = test.get('metrics', {})
         if metrics:
-            create_time = f"{metrics.get('execution_time_seconds', 0):.2f}s"
-            sync_time = f"{metrics.get('replication_time_seconds', 0):.2f}s"
-            gas_used = metrics.get('gas_used', 0)
-            cost_eth = f"{metrics.get('transaction_cost_eth', 0):.8f}"
+            # Use the correct field names from the JSON
+            create_time = f"{metrics.get('creation_time_seconds', 0):.2f}s"
+            sync_time = f"{metrics.get('total_sync_time_seconds', 0):.2f}s"
+            gas_used = metrics.get('total_gas_used', 0)
+            cost_eth = f"{metrics.get('total_cost_eth', 0):.8f}"
             
-            if gas_used != 'N/A':
+            if gas_used != 'N/A' and gas_used != 0:
                 total_gas += gas_used
             if cost_eth != 'N/A':
-                total_cost += float(cost_eth)
+                try:
+                    total_cost += float(cost_eth)
+                except:
+                    pass
             if sync_time != 'N/A':
-                total_sync_time += float(sync_time.replace('s', ''))
+                try:
+                    total_sync_time += float(sync_time.replace('s', ''))
+                except:
+                    pass
         
-        # Check consistency (simplified for now)
-        if status == 'passed' or 'success' in status.lower():
-            consistency = '✅ 100%'
+        # Check consistency
+        if status == 'success':
+            # Check data_consistency from metrics
+            data_consistent = metrics.get('data_consistency', False)
+            consistency = '✅ 100%' if data_consistent else '❌ Failed'
         elif status == 'failed_replication':
             consistency = '❌ Failed'
+        elif status == 'error':
+            consistency = '⚠️ Error'
         else:
             consistency = '⚠️ N/A'
         
